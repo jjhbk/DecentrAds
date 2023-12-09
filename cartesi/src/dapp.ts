@@ -3,23 +3,24 @@ import { Notice, Output, Voucher, Report, Error_out, Log } from "./outputs";
 import { Ads, Router } from "./router";
 import { Wallet } from "./wallet";
 import { Auctioneer } from "./auction";
-
-import erc20_portal from "./deployments/localhost/ERC20Portal.json";
+import deployments from "./rollups.json";
+/*import erc20_portal from "./deployments/localhost/ERC20Portal.json";
 import erc_721_portal from "./deployments/localhost/ERC721Portal.json";
 import dapp_address_relay from "./deployments/localhost/DAppAddressRelay.json";
 import ether_portal from "./deployments/localhost/EtherPortal.json";
 console.info("MarketPlace App Started");
-let rollup_address = "";
-const rollup_server: string = <string>process.env.ROLLUP_HTTP_SERVER_URL;
 let Network: string = "localhost";
 Network = <string>process.env.Network;
-const wallet = new Wallet(new Map());
-const auctioneer = new Auctioneer(wallet);
+;
 
 console.info("rollup server url is ", rollup_server, Network);
 if (Network === undefined) {
   Network = "localhost";
-}
+}*/
+let rollup_address = "";
+const rollup_server: string = <string>process.env.ROLLUP_HTTP_SERVER_URL;
+const wallet = new Wallet(new Map());
+const auctioneer = new Auctioneer(wallet);
 const admap = new Map<string, Ads>();
 const router = new Router(auctioneer, wallet, admap);
 const send_request = async (output: Output | Set<Output>) => {
@@ -61,14 +62,20 @@ async function handle_advance(data: any) {
     console.log("msg sender is", msg_sender.toLowerCase());
     const payloadStr = hexToString(payload);
 
-    if (msg_sender.toLowerCase() === ether_portal.address.toLowerCase()) {
+    if (
+      msg_sender.toLowerCase() ===
+      deployments.contracts.EtherPortal.address.toLowerCase()
+    ) {
       try {
         return router.process("ether_deposit", payload);
       } catch (e) {
         return new Error_out(`failed to process ether deposti ${payload} ${e}`);
       }
     }
-    if (msg_sender.toLowerCase() === dapp_address_relay.address.toLowerCase()) {
+    if (
+      msg_sender.toLowerCase() ===
+      deployments.contracts.DAppAddressRelay.address.toLowerCase()
+    ) {
       rollup_address = payload;
       router.set_rollup_address(rollup_address);
       console.log("Setting DApp address");
@@ -77,7 +84,10 @@ async function handle_advance(data: any) {
       );
     }
 
-    if (msg_sender.toLowerCase() === erc20_portal.address.toLowerCase()) {
+    if (
+      msg_sender.toLowerCase() ===
+      deployments.contracts.ERC20Portal.address.toLowerCase()
+    ) {
       try {
         return router.process("erc20_deposit", payload);
       } catch (e) {
@@ -85,7 +95,10 @@ async function handle_advance(data: any) {
       }
     }
 
-    if (msg_sender.toLowerCase() === erc_721_portal.address.toLowerCase()) {
+    if (
+      msg_sender.toLowerCase() ===
+      deployments.contracts.ERC721Portal.address.toLowerCase()
+    ) {
       try {
         return router.process("erc721_deposit", payload);
       } catch (e) {
