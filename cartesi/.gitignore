@@ -13,3 +13,5 @@ testnet-linea.env
 run-deploy.sh 
 run-validator.sh
 testnet
+.sunodo.env
+.sunodo-base.env
