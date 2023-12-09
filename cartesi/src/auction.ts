@@ -4,7 +4,7 @@ import { Wallet } from "./wallet";
 import { Error_out, Log, Notice, Output } from "./outputs";
 
 class Auctioneer {
-  auctions: Map<number, Auction>;
+  auctions: Map<number, Auction> = new Map<number, Auction>();
   wallet: Wallet;
   constructor(wallet: Wallet) {
     this.auctions = new Map();
@@ -96,14 +96,14 @@ class Auctioneer {
       if (bidder === auction.creator) {
         throw new EvalError(`${bidder} cannot bid on their own auction`);
       }
-      if (timestamp < auction.start_date) {
+      /*if (timestamp < auction.start_date) {
         throw new EvalError(
           `Bid arrived before auction start date ${auction.start_date.toISOString()}`
         );
       }
       if (timestamp > auction.end_date) {
         throw new EvalError(`Account ${bidder} doesn't have enough funds`);
-      }
+      }*/
       if (!this.has_enough_funds(auction.erc20, bidder, amount)) {
         throw new EvalError(`Account ${bidder} doesn't have enough funds`);
       }
@@ -131,11 +131,11 @@ class Auctioneer {
       if (!auction) {
         throw new EvalError(`There's no auction with id ${auction_id}`);
       }
-      if (msg_date < auction.end_date) {
+      /*if (msg_date < auction.end_date) {
         throw new EvalError(
           `It can onlu end after ${auction.end_date.toISOString()}`
         );
-      }
+      }*/
       let notice_template = { type: "auction_end", content: {} };
       let winning_bid = auction.getWinning_bid();
       let outputs = new Set<Output>();
@@ -213,7 +213,7 @@ class Auctioneer {
       if (erc721_balance === undefined) {
         return false;
       }
-      if (item.token_id in <Set<number>>erc721_balance) {
+      if (erc721_balance.has(item.token_id)) {
         return true;
       }
       return false;

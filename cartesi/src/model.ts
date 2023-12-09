@@ -8,12 +8,12 @@ class Item {
     this.token_id = token_id;
   }
 
-  _eq = (other: Item) => {
+  _eq(other: Item) {
     return this.erc721 === other.erc721 && this.token_id === other.token_id;
-  };
-  _ne = (other: Item) => {
+  }
+  _ne(other: Item) {
     return this.erc721 != other.erc721 && this.token_id != other.token_id;
-  };
+  }
 }
 
 class Bid {
@@ -36,37 +36,37 @@ class Bid {
     this.amount = amount;
     this.timestamp = timestamp;
   }
-  _eq = (other: Bid) => {
+  _eq(other: Bid) {
     return (
       this.author === other.author &&
       this.auction_id === other.auction_id &&
       this.amount === other.amount &&
       this.timestamp === other.timestamp
     );
-  };
+  }
 
-  _ne = (other: Bid) => {
+  _ne(other: Bid) {
     return (
       this.author != other.author &&
       this.auction_id != other.auction_id &&
       this.amount != other.amount &&
       this.timestamp != other.timestamp
     );
-  };
+  }
 
-  _gt = (other: Bid) => {
+  _gt(other: Bid) {
     return (
       this.amount > other.amount ||
       (this.amount == other.amount && this.timestamp < other.timestamp)
     );
-  };
+  }
 
-  _lt = (other: Bid) => {
+  _lt(other: Bid) {
     return (
       this.amount < other.amount ||
       (this.amount == other.amount && this.timestamp > other.timestamp)
     );
-  };
+  }
 }
 enum Status {
   CREATED = 0,
@@ -76,7 +76,7 @@ enum Status {
 const MIN_BID_AMOUNT = 1;
 
 class Auction {
-  static curr_id: number;
+  static curr_id: number = 0;
   id: number;
   creator: string;
   item: Item;

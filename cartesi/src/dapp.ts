@@ -1,10 +1,9 @@
 import { hexToBytes, hexToString, stringToBytes, stringToHex } from "viem";
 import { Notice, Output, Voucher, Report, Error_out, Log } from "./outputs";
-import { Router } from "./router";
+import { Ads, Router } from "./router";
 import { Wallet } from "./wallet";
 import { Auctioneer } from "./auction";
-import { request } from "http";
-import { NODATA } from "dns";
+
 import erc20_portal from "./deployments/localhost/ERC20Portal.json";
 import erc_721_portal from "./deployments/localhost/ERC721Portal.json";
 import dapp_address_relay from "./deployments/localhost/DAppAddressRelay.json";
@@ -21,8 +20,8 @@ console.info("rollup server url is ", rollup_server, Network);
 if (Network === undefined) {
   Network = "localhost";
 }
-
-const router = new Router(auctioneer, wallet);
+const admap = new Map<string, Ads>();
+const router = new Router(auctioneer, wallet, admap);
 const send_request = async (output: Output | Set<Output>) => {
   if (output instanceof Output) {
     let endpoint;

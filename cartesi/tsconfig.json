@@ -19,5 +19,5 @@
     "resolveJsonModule": true,
   },
   "include": ["."],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules","common-contracts"]
 }
