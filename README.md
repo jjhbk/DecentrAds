@@ -1,8 +1,6 @@
 # DecentrAds
 Decentralized AdSpace is a p2p social media platform with a decentralised advertisement layer on top. It connects content creators directly with advertisers/brands eliminating the role of intermediaries. 
 
-The dApp lets a user create content and put it on bidding for ad placements. The advertisers look at the metrics of a content page and place their bids. A simple auction algorithm then selects the highest bidder.
-
 ## How it works?
 A creator starts by minting content on the platform. This content generates metrics like views, upvotes, downvotes, comments etc by users visiting the dApp. 
 Each page of a creator has a dedicated ad space. This ad space is open for interested advertisers to place their ads. Depending upon the content metrics, an advertiser places a bid to host their ad. We use a simple auction algorithm to select the winning bidder and transfer the bid amount directly to creator's wallet.
