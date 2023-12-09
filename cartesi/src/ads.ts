@@ -19,9 +19,24 @@ class User {
 class Content {
   public cid: string;
   public content: string;
-  constructor(cid: string, content: string) {
+  public reviews: Map<string, string>;
+  public likes: number;
+  public dislikes: number;
+  public views: number;
+  constructor(
+    cid: string,
+    content: string,
+    reviews: Map<string, string>,
+    likes: number,
+    dislikes: number,
+    views: number
+  ) {
     this.cid = cid;
     this.content = content;
+    this.reviews = reviews;
+    this.likes = likes;
+    this.dislikes = dislikes;
+    this.views = views;
   }
 }
 class Adspace {
