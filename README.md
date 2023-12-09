@@ -6,6 +6,6 @@ Backend - Cartesi to compute the dynamic bid amount of ad space. The contracts a
 Frontend - ReactJS framework
 
 ## Architecture
-![archtecture](./architecture.jpeg)
+![archtecture](architecture.jpeg)
 
 
