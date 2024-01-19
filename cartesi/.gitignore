@@ -1,0 +1,17 @@
+.sunodo
+/dist
+/node_modules
+#src/schema.d.ts
+src/deployments
+/common-contracts
+/sunodo-deploy-wo
+testnet-scroll.env
+testnet-arbitrum.env
+testnet-base.env
+testnet-polygonzk.env
+testnet-linea.env
+run-deploy.sh 
+run-validator.sh
+testnet
+.sunodo.env
+.sunodo-base.env

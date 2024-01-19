@@ -1,0 +1,1265 @@
+{
+  "name": "scrollSepolia",
+  "chainId": "534351",
+  "contracts": {
+    "Bitmask": {
+      "address": "0x6D4651D8325C651C26f9cfACc097EfE32D9c4bB2",
+      "abi": []
+    },
+    "CartesiMathV2": {
+      "address": "0x7B982810a2af69Ad2BC407Ad89ceFBb53d8497D4",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_num",
+              "type": "uint256"
+            }
+          ],
+          "name": "clz",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_num",
+              "type": "uint256"
+            }
+          ],
+          "name": "ctz",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_num",
+              "type": "uint256"
+            }
+          ],
+          "name": "getLog2Floor",
+          "outputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_num",
+              "type": "uint256"
+            }
+          ],
+          "name": "getLog2TableTimes1M",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_num",
+              "type": "uint256"
+            }
+          ],
+          "name": "isPowerOf2",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_num",
+              "type": "uint256"
+            }
+          ],
+          "name": "log2ApproxTimes1M",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "MerkleV2": {
+      "address": "0x1dF64Dfc2A61C060a778CFF8faaE6eA3216B5369",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32[]",
+              "name": "hashes",
+              "type": "bytes32[]"
+            }
+          ],
+          "name": "calculateRootFromPowerOfTwo",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_index",
+              "type": "uint256"
+            }
+          ],
+          "name": "getEmptyTreeHashAtIndex",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "_data",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_wordIndex",
+              "type": "uint256"
+            }
+          ],
+          "name": "getHashOfWordAtIndex",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "_data",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_log2Size",
+              "type": "uint256"
+            }
+          ],
+          "name": "getMerkleRootFromBytes",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_position",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_logSizeOfReplacement",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_logSizeOfFullDrive",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_replacement",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32[]",
+              "name": "siblings",
+              "type": "bytes32[]"
+            }
+          ],
+          "name": "getRootAfterReplacementInDrive",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "UnrolledCordic": {
+      "address": "0x664DE3410E089126A07c763ea2DA81994C4C3cae",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "val",
+              "type": "uint256"
+            }
+          ],
+          "name": "log2Times1e18",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "InputBox": {
+      "address": "0xEC2819623EDff798c749317C454E19073aF094f4",
+      "abi": [
+        {
+          "inputs": [],
+          "name": "InputSizeExceedsLimit",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "dapp",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "inputIndex",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes",
+              "name": "input",
+              "type": "bytes"
+            }
+          ],
+          "name": "InputAdded",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_input",
+              "type": "bytes"
+            }
+          ],
+          "name": "addInput",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_index",
+              "type": "uint256"
+            }
+          ],
+          "name": "getInputHash",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            }
+          ],
+          "name": "getNumberOfInputs",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    "EtherPortal": {
+      "address": "0xF817490F242Ec5b690491e34CE1A446C5a99127E",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "_inputBox",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "EtherTransferFailed",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_execLayerData",
+              "type": "bytes"
+            }
+          ],
+          "name": "depositEther",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getInputBox",
+          "outputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    "ERC20Portal": {
+      "address": "0xC11711CED3b1941f29DDA91c407876D0138595ad",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "_inputBox",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_execLayerData",
+              "type": "bytes"
+            }
+          ],
+          "name": "depositERC20Tokens",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getInputBox",
+          "outputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    "ERC721Portal": {
+      "address": "0x13D049FdF81Fcba7F4f39E99A8E20Faa8343CB3c",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "_inputBox",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC721",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_baseLayerData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_execLayerData",
+              "type": "bytes"
+            }
+          ],
+          "name": "depositERC721Token",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getInputBox",
+          "outputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    "ERC1155SinglePortal": {
+      "address": "0xb845c3b72A8dA8FEA0610510CE9176b40e931F0d",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "_inputBox",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC1155",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_baseLayerData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_execLayerData",
+              "type": "bytes"
+            }
+          ],
+          "name": "depositSingleERC1155Token",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getInputBox",
+          "outputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    "ERC1155BatchPortal": {
+      "address": "0x1FeAfB9fd86fF77E3a652db3E87b84b6Cad43036",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "_inputBox",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC1155",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "_tokenIds",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "_values",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_baseLayerData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_execLayerData",
+              "type": "bytes"
+            }
+          ],
+          "name": "depositBatchERC1155Token",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getInputBox",
+          "outputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    "DAppAddressRelay": {
+      "address": "0xBe093D2660C578E4840b33B102468b5E4C20BDc4",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "_inputBox",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "getInputBox",
+          "outputs": [
+            {
+              "internalType": "contract IInputBox",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            }
+          ],
+          "name": "relayDAppAddress",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ]
+    },
+    "CartesiDAppFactory": {
+      "address": "0xceCe55E3E8a34de593059f05a035510D3139609c",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "contract IConsensus",
+              "name": "consensus",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "dappOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32",
+              "name": "templateHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "contract CartesiDApp",
+              "name": "application",
+              "type": "address"
+            }
+          ],
+          "name": "ApplicationCreated",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IConsensus",
+              "name": "_consensus",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dappOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_templateHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_salt",
+              "type": "bytes32"
+            }
+          ],
+          "name": "calculateApplicationAddress",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IConsensus",
+              "name": "_consensus",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dappOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_templateHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_salt",
+              "type": "bytes32"
+            }
+          ],
+          "name": "newApplication",
+          "outputs": [
+            {
+              "internalType": "contract CartesiDApp",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IConsensus",
+              "name": "_consensus",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_dappOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_templateHash",
+              "type": "bytes32"
+            }
+          ],
+          "name": "newApplication",
+          "outputs": [
+            {
+              "internalType": "contract CartesiDApp",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ]
+    },
+    "Authority": {
+      "address": "0x5F055a3A72D87CbF4710bd8B63DEc6383933076c",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_owner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "AuthorityWithdrawalFailed",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "application",
+              "type": "address"
+            }
+          ],
+          "name": "ApplicationJoined",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "contract IHistory",
+              "name": "history",
+              "type": "address"
+            }
+          ],
+          "name": "NewHistory",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_proofContext",
+              "type": "bytes"
+            }
+          ],
+          "name": "getClaim",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getHistory",
+          "outputs": [
+            {
+              "internalType": "contract IHistory",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "join",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_consensus",
+              "type": "address"
+            }
+          ],
+          "name": "migrateHistoryToConsensus",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IHistory",
+              "name": "_history",
+              "type": "address"
+            }
+          ],
+          "name": "setHistory",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "_claimData",
+              "type": "bytes"
+            }
+          ],
+          "name": "submitClaim",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "withdrawERC20Tokens",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ]
+    },
+    "History": {
+      "address": "0x5948BF6CaC19Ed816E48c2965bA3dAff6ef88f21",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_owner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidClaimIndex",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidInputIndices",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "UnclaimedInputs",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "dapp",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "epochHash",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint128",
+                  "name": "firstIndex",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint128",
+                  "name": "lastIndex",
+                  "type": "uint128"
+                }
+              ],
+              "indexed": false,
+              "internalType": "struct History.Claim",
+              "name": "claim",
+              "type": "tuple"
+            }
+          ],
+          "name": "NewClaimToHistory",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_dapp",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_proofContext",
+              "type": "bytes"
+            }
+          ],
+          "name": "getClaim",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_consensus",
+              "type": "address"
+            }
+          ],
+          "name": "migrateToConsensus",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "_claimData",
+              "type": "bytes"
+            }
+          ],
+          "name": "submitClaim",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ]
+    }
+  }
+}
